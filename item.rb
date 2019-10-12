@@ -3,7 +3,8 @@ class Item
     'default' => 'DefaultItem',
     'aged' => 'AgedItem',
     'backstage' => 'BackstageItem',
-    'legendary' => 'LegendaryItem'
+    'legendary' => 'LegendaryItem',
+    'conjured' => 'ConjuredItem'
   }.freeze
 
   DEFAULT_CATEGORY = 'default'.freeze
@@ -11,7 +12,8 @@ class Item
   PRODUCT_CATEGORY = {
     'Aged Brie' => 'aged',
     'Backstage passes to a TAFKAL80ETC concert' => 'backstage',
-    'Sulfuras, Hand of Ragnaros' => 'legendary'
+    'Sulfuras, Hand of Ragnaros' => 'legendary',
+    'Conjured Mana Cake' => 'conjured'
   }.freeze
 
   def self.for(name, sell_in, quality)

@@ -1,0 +1,16 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: gilded-rose-app
+    command: ruby run.rb
+    ports:
+    - 3020:3020
+    volumes:
+    - .:/gilded-rose-app
+    - gems:/gems
+    environment:
+    - BUNDLE_PATH=/gems/vendor
+
+volumes:
+  gems:

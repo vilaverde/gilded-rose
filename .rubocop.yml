@@ -1,0 +1,16 @@
+AllCops:
+  TargetRubyVersion: 2.6.3
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+Style/SymbolArray:
+  Enabled: true
+  EnforcedStyle: brackets
+Metrics/MethodLength:
+  Max: 20
+Metrics/AbcSize:
+  Max: 20
+Style/RedundantSelf:
+  Enabled: false

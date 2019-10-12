@@ -6,7 +6,7 @@ describe GildedRose do
       it 'reduces the quality by 1' do
         sell_in = 10
         quality = 5
-        item = Item.new('foo', sell_in, quality)
+        item = Item.for('foo', sell_in, quality)
 
         GildedRose.new([item]).update_quality
 
@@ -16,7 +16,7 @@ describe GildedRose do
       it 'reduces quality by 2' do
         sell_in = 0
         quality = 4
-        item = Item.new('foo', sell_in, quality)
+        item = Item.for('foo', sell_in, quality)
 
         GildedRose.new([item]).update_quality
 
@@ -26,7 +26,7 @@ describe GildedRose do
       it 'does not reduce quality below 0' do
         sell_in = 0
         quality = 0
-        item = Item.new('foo', sell_in, quality)
+        item = Item.for('foo', sell_in, quality)
 
         GildedRose.new([item]).update_quality
 
@@ -36,7 +36,7 @@ describe GildedRose do
       it 'reduces sell_in by 1' do
         sell_in = 0
         quality = 0
-        item = Item.new('foo', sell_in, quality)
+        item = Item.for('foo', sell_in, quality)
 
         GildedRose.new([item]).update_quality
 
@@ -49,7 +49,7 @@ describe GildedRose do
         it 'increases quality by 2' do
           sell_in = 0
           quality = 0
-          item = Item.new('Aged Brie', sell_in, quality)
+          item = Item.for('Aged Brie', sell_in, quality)
 
           GildedRose.new([item]).update_quality
 
@@ -59,7 +59,7 @@ describe GildedRose do
         it 'does not increase quality of item above 50' do
           sell_in = 0
           quality = 50
-          item = Item.new('Aged Brie', sell_in, quality)
+          item = Item.for('Aged Brie', sell_in, quality)
 
           GildedRose.new([item]).update_quality
 
@@ -69,7 +69,7 @@ describe GildedRose do
         it 'decreases sell_in by 1' do
           sell_in = 2
           quality = 50
-          item = Item.new('Aged Brie', sell_in, quality)
+          item = Item.for('Aged Brie', sell_in, quality)
 
           GildedRose.new([item]).update_quality
 
@@ -81,7 +81,7 @@ describe GildedRose do
         it 'does not decrease quality' do
           sell_in = 0
           quality = 80
-          item = Item.new('Sulfuras, Hand of Ragnaros', sell_in, quality)
+          item = Item.for('Sulfuras, Hand of Ragnaros', sell_in, quality)
 
           GildedRose.new([item]).update_quality
 
@@ -91,7 +91,7 @@ describe GildedRose do
         it 'does not change sell_in value' do
           sell_in = 0
           quality = 80
-          item = Item.new('Sulfuras, Hand of Ragnaros', sell_in, quality)
+          item = Item.for('Sulfuras, Hand of Ragnaros', sell_in, quality)
 
           GildedRose.new([item]).update_quality
 
@@ -103,7 +103,7 @@ describe GildedRose do
         it 'increases quality by 2 when sell_in <= 10 and sell_in > 5' do
           sell_in = 10
           quality = 10
-          item = Item.new(
+          item = Item.for(
             'Backstage passes to a TAFKAL80ETC concert',
             sell_in,
             quality
@@ -117,7 +117,7 @@ describe GildedRose do
         it 'increases quality by 3 when sell_in < 5 and sell_in >= 0' do
           sell_in = 0
           quality = 10
-          item = Item.new(
+          item = Item.for(
             'Backstage passes to a TAFKAL80ETC concert',
             sell_in,
             quality
@@ -131,7 +131,7 @@ describe GildedRose do
         it 'drops quality to 0' do
           sell_in = 0
           quality = 10
-          item = Item.new(
+          item = Item.for(
             'Backstage passes to a TAFKAL80ETC concert',
             sell_in,
             quality
@@ -145,7 +145,7 @@ describe GildedRose do
         it 'decreases sell_in by 1' do
           sell_in = 2
           quality = 50
-          item = Item.new(
+          item = Item.for(
             'Backstage passes to a TAFKAL80ETC concert',
             sell_in,
             quality

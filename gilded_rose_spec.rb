@@ -156,6 +156,48 @@ describe GildedRose do
           expect(item.sell_in).to eq(sell_in - 1)
         end
       end
+
+      context 'and behaves like "Conjured Mana Cake"' do
+        it 'reduces the quality by 2' do
+          sell_in = 10
+          quality = 5
+          item = Item.for('Conjured Mana Cake', sell_in, quality)
+
+          GildedRose.new([item]).update_quality
+
+          expect(item.quality).to eq(quality - 2)
+        end
+
+        it 'reduces quality by 4' do
+          sell_in = 0
+          quality = 4
+          item = Item.for('Conjured Mana Cake', sell_in, quality)
+
+          GildedRose.new([item]).update_quality
+
+          expect(item.quality).to eq(quality - 4)
+        end
+
+        it 'does not reduce quality below 0' do
+          sell_in = 0
+          quality = 3
+          item = Item.for('Conjured Mana Cake', sell_in, quality)
+
+          GildedRose.new([item]).update_quality
+
+          expect(item.quality).to eq(0)
+        end
+
+        it 'reduces sell_in by 1' do
+          sell_in = 0
+          quality = 0
+          item = Item.for('Conjured Mana Cake', sell_in, quality)
+
+          GildedRose.new([item]).update_quality
+
+          expect(item.sell_in).to eq(sell_in - 1)
+        end
+      end
     end
   end
 end

@@ -1,9 +1,9 @@
 class AgedItem < Item
   def update_quality
-    @sell_in = @sell_in - 1
+    @sell_in -= 1
 
-    if @sell_in < 0 && @quality < 49
-      @quality = @quality + 2
-    end
+    return unless @sell_in.negative? && @quality < 49
+
+    @quality += 2
   end
 end

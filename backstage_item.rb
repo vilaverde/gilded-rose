@@ -4,7 +4,7 @@ class BackstageItem < Item
 
     if @sell_in.negative?
       @quality = 0
-    elsif @quality < 50
+    else
       increase_quality
     end
   end
@@ -12,6 +12,8 @@ class BackstageItem < Item
   private
 
   def increase_quality
+    return if @quality >= 50
+
     @quality += 1
     @quality += 1 if @sell_in <= 10 && @sell_in < 50
     @quality += 1 if @sell_in <= 5 && @sell_in < 50

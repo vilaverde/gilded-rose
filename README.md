@@ -34,7 +34,7 @@ legendary item and as such its `quality` is 80 and it never changes.)
 ## Some details for you to consider
 
 - We appreciate if you could git commit each relevant step of your development.
-- There's no hard deadline, feel free to take as much or as little time as you wish.
+- There's no hard deadline, we'd appreciate if you could submit your solution within 7 days. If you need more time just send us an email to inform us and it will be no problem.
 
 Please add a quick explanation in a README file where you clarify your general approach.
 Feel free to add your feedback to this coding challenge as well.
